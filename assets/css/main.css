@@ -139,6 +139,14 @@ input, select, textarea {
 		opacity: 1;
 	}
 	
+	footer li a:hover {
+		color: rgba(192,207,178,1);
+	}
+
+	footer li a:active {
+		color: rgba(192,207,178,1);
+	}
+	
 	.boxshadow {
 		box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.05);
 	}
