@@ -2821,8 +2821,13 @@ input, select, textarea {
 		
 		@media screen and (max-width: 480px) {
 			.icon.style3 {
-				font-size: 1.3em;
-				display: inline;
+				vertical-align: top;
+				font-size: 2.0em;
+				margin-left: 10px;
+				margin-right: 25px;
+				display: block;
+				position: relative;
+				float: left;
 			}
 		}
 		
@@ -7896,6 +7901,11 @@ input, select, textarea {
 				margin-top: -10px;
 				margin-bottom: 0;
 			}
+			
+			.items.style1 p {
+				margin-top: 5px;
+				margin-bottom: auto;
+			}
 
 		@media screen and (max-width: 980px) {	
 			.items.style1.small > * {
@@ -7918,6 +7928,14 @@ input, select, textarea {
 			
 			.items.style1.icon {
 				font-size: 32px;
+			}
+			
+			.items.style1 p {
+				vertical-align: center;
+				text-align: left;
+				display: block;
+				margin-top: auto;
+				margin-bottom: auto;
 			}
 			
 			.items.style1 h3 {
