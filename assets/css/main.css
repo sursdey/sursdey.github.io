@@ -9029,9 +9029,12 @@ input, select, textarea {
 			z-index: 10;
 			padding: 0;
 			margin: 0;
-			background-color: white;
+			background-color: transparent;
 		}
-
+		
+		#menu .close:hover {
+			cursor: pointer;
+		}
 
 		@media screen and (max-width: 736px) {
 
