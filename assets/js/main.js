@@ -165,6 +165,21 @@
 			.children()
 				.wrapInner('<div class="inner"></div>');
 
+
+	// Tooltip
+	
+	$(".withTooltip").on("mouseenter",function(event){
+	  $(".tooltip").remove();
+	  var TooltipTitle=$(this).attr("Tooltip-title");
+	  var tooltip=$("<span/>",{class:"tooltip",html:TooltipTitle,css:{top:event.pageY,left:event.pageX}});
+	  $("body").append(tooltip);
+	  tooltip.delay(200).fadeIn();
+	});
+	$(".withTooltip").on("mouseleave",function(event){
+		$(".tooltip").delay(200).fadeOut();
+	});
+
+
 	// Gallery.
 		$('.gallery')
 			.wrapInner('<div class="inner"></div>')
