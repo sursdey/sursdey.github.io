@@ -177,7 +177,8 @@
 				
 
 	// Info Modal
-		var $modal = $('#modal');
+	
+		var $modal = $('.modal');
 
 		$modal._locked = false;
 
@@ -205,8 +206,14 @@
 
 		$modal._hide = function() {
 
-			if ($modal._lock())
+			if ($modal._lock()) {
 				$body.removeClass('is-modal-visible');
+				
+				var ele = document.getElementsByClassName('modal');
+				for (var i = 0; i < ele.length; i++ ) {
+					ele[i].style.visibility = "hidden";
+				}
+			}
 
 		};
 
@@ -258,14 +265,16 @@
 
 				});
 
-		$body
-			.on('click', 'a[href="#modal"]', function(event) {
 
+		$('.trigger-modal').on('click', function(event) {
 				event.stopPropagation();
 				event.preventDefault();
+				
+				var hrefValue = $(this).attr('href');
+				document.getElementById(hrefValue).style.visibility = "visible";
+				
+				$modal._toggle();
 
-				// Toggle.
-					$modal._toggle();
 
 			})
 			.on('keydown', function(event) {
@@ -275,6 +284,8 @@
 						$modal._hide();
 
 			});
+			
+			
 
 	// Gallery.
 		$('.gallery')

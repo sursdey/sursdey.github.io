@@ -8439,6 +8439,7 @@ input, select, textarea {
 		   text-align: justify-content;
 		   font-size: 1em;
 		}
+		
 
 		@media screen and (max-width: 1280px) {
 			.profiledesc {
@@ -8960,7 +8961,7 @@ input, select, textarea {
 			
 /* modal */ 
 
-	#modal {
+	.modal {
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
@@ -8995,7 +8996,7 @@ input, select, textarea {
 		width: 100%;
 	}
 
-		#modal .inner {
+		.modal .inner {
 			padding: 2.5em 1.5em 0.5em 1.5em ;
 			-moz-transform: translateY(0.5em);
 			-webkit-transform: translateY(0.5em);
@@ -9021,25 +9022,25 @@ input, select, textarea {
 			color: inherit;
 		}
 		
-		#modal p {
+		.modal p {
 			text-align: justify;
 			font-size: 0.9em;
 			line-height: 1.2em;
 		}
 		
-		#modal img {
+		.modal img {
 			border-radius: 50%;
 			object-fit: cover;
 			float: left;
 		}
 
-		#modal h2 {
+		.modal h2 {
 			text-align: left;
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 			padding-bottom: 1em;
 		}
 
-		#modal .close {
+		.modal .close {
 			position: absolute;
 			top: 15%;
 			left: 76%;
@@ -9050,20 +9051,20 @@ input, select, textarea {
 			background-color: transparent;
 		}
 		
-		#modal .close:hover {
+		.modal .close:hover {
 			cursor: pointer;
 		}
 
 		@media screen and (max-width: 736px) {
 
-			#modal .inner {
+			.modal .inner {
 				width: 85%;
 				max-height: 75%;
 				overflow-y: auto;
 				overflow-x: hidden;
 			}
 
-				#modal .close {
+				.modal .close {
 					left: 80%;
 				}
 
@@ -9076,13 +9077,13 @@ input, select, textarea {
 		filter: blur(1.5px);
 	}
 
-	body.is-modal-visible #modal {
+	body.is-modal-visible .modal {
 		pointer-events: auto;
 		opacity: 1;
-		visibility: visible;
+		/*visibility: visible;*/
 	}
 
-		body.is-modal-visible #modal .inner {
+		body.is-modal-visible .modal .inner {
 			-moz-transform: translateY(0);
 			-webkit-transform: translateY(0);
 			-ms-transform: translateY(0);
