@@ -42,6 +42,7 @@
 			}, 100);
 		});
 
+
 	// Browser fixes.
 
 		// IE: Flexbox min-height bug.
@@ -114,6 +115,15 @@
 		$('.smooth-scroll').scrolly();
 		$('.smooth-scroll-middle').scrolly({ anchor: 'middle' });
 
+
+	// Auto scroll team list	
+	$('.team-list').scrollLeft(1000);
+	$('.team-list').scrollex({ 
+		enter: function() {
+			$(this).delay(400).animate({scrollLeft: 0}, 2600,'easeInOutQuad');
+		}
+	})
+	
 	// Wrapper.
 		$wrapper.children()
 			.scrollex({
@@ -164,72 +174,57 @@
 			})
 			.children()
 				.wrapInner('<div class="inner"></div>');
+				
 
+	// Info Modal
+		var $modal = $('#modal');
 
-	// Tooltip
-	
-	$(".withTooltip").on("mouseenter",function(event){
-	  $(".tooltip").remove();
-	  var TooltipTitle=$(this).attr("Tooltip-title");
-	  var tooltip=$("<span/>",{class:"tooltip",html:TooltipTitle,css:{top:event.pageY,left:event.pageX}});
-	  $("body").append(tooltip);
-	  tooltip.delay(200).fadeIn();
-	});
-	$(".withTooltip").on("mouseleave",function(event){
-		$(".tooltip").delay(200).fadeOut();
-	});
-	
-	// Menu
+		$modal._locked = false;
 
-	// Menu.
-		var $menu = $('#menu');
+		$modal._lock = function() {
 
-		$menu._locked = false;
-
-		$menu._lock = function() {
-
-			if ($menu._locked)
+			if ($modal._locked)
 				return false;
 
-			$menu._locked = true;
+			$modal._locked = true;
 
 			window.setTimeout(function() {
-				$menu._locked = false;
+				$modal._locked = false;
 			}, 350);
 
 			return true;
 
 		};
 
-		$menu._show = function() {
+		$modal._show = function() {
 
-			if ($menu._lock())
-				$body.addClass('is-menu-visible');
-
-		};
-
-		$menu._hide = function() {
-
-			if ($menu._lock())
-				$body.removeClass('is-menu-visible');
+			if ($modal._lock())
+				$body.addClass('is-modal-visible');
 
 		};
 
-		$menu._toggle = function() {
+		$modal._hide = function() {
 
-			if ($menu._lock())
-				$body.toggleClass('is-menu-visible');
+			if ($modal._lock())
+				$body.removeClass('is-modal-visible');
 
 		};
 
-		$menu
+		$modal._toggle = function() {
+
+			if ($modal._lock())
+				$body.toggleClass('is-modal-visible');
+
+		};
+
+		$modal
 			.appendTo($body)
 			.on('click', function(event) {
 
 				event.stopPropagation();
 
 				// Hide.
-					$menu._hide();
+					$modal._hide();
 
 			})
 			.find('.inner')
@@ -240,7 +235,7 @@
 					event.stopImmediatePropagation();
 
 					// Hide.
-						$menu._hide();
+						$modal._hide();
 
 				})
 				.on('click', function(event) {
@@ -254,7 +249,7 @@
 					event.stopPropagation();
 
 					// Hide.
-						$menu._hide();
+						$modal._hide();
 
 					// Redirect.
 						window.setTimeout(function() {
@@ -264,20 +259,20 @@
 				});
 
 		$body
-			.on('click', 'a[href="#menu"]', function(event) {
+			.on('click', 'a[href="#modal"]', function(event) {
 
 				event.stopPropagation();
 				event.preventDefault();
 
 				// Toggle.
-					$menu._toggle();
+					$modal._toggle();
 
 			})
 			.on('keydown', function(event) {
 
 				// Hide on escape.
 					if (event.keyCode == 27)
-						$menu._hide();
+						$modal._hide();
 
 			});
 

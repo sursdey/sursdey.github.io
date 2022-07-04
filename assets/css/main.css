@@ -17,7 +17,7 @@ u, i, center, dl, dt, dd, ol, ul, li, fieldset,
 form, label, legend, table, caption, tbody,
 tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
-footer, header, hgroup, menu, nav, output, ruby,
+footer, header, hgroup, modal, nav, output, ruby,
 section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -27,7 +27,7 @@ section, summary, time, mark, audio, video {
 	vertical-align: baseline;}
 
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, modal, nav, section {
 	display: block;}
 
 body {
@@ -297,13 +297,13 @@ input, select, textarea {
 							margin-right: 0.5em;
 						}
 						
-						#header nav a[href="#menu"] {
+						#header nav a[href="#modal"] {
 							box-shadow: none;
 							padding: 0 1em;
 							border-radius: 0;
 						}
 
-							#header nav a[href="#menu"]:hover, #header nav a[href="#menu"]:active {
+							#header nav a[href="#modal"]:hover, #header nav a[href="#modal"]:active {
 								background-color: inherit;
 							}
 
@@ -311,14 +311,14 @@ input, select, textarea {
 
 		@media screen and (max-width: 480px) {
 
-			#header nav a[href="#menu"] {
+			#header nav a[href="#modal"] {
 				width: 4em;
 				white-space: nowrap;
 				text-indent: 4em;
 				position: relative;
 			}
 
-				#header nav a[href="#menu"]:before {
+				#header nav a[href="#modal"]:before {
 					width: inherit;
 					position: absolute;
 					top: 0;
@@ -8407,7 +8407,7 @@ input, select, textarea {
 		}
 		
 		.profile p {
-			margin-top: -20px;
+			margin-top: -16px;
 			margin-bottom: 5px;
 			font-size: 0.8em;
 		}
@@ -8425,9 +8425,7 @@ input, select, textarea {
 			margin: auto;
 			text-align: left;
 		}
-		
-
-		
+				
 		.tooltip {
 			cursor: pointer;
 		   width: 80%;
@@ -8468,10 +8466,23 @@ input, select, textarea {
 				margin-left: 0px;
 				margin-right: 0px;
 			}
+			
+			
+			.items.style4 {
+				width: 100vw;
+				margin: -20px;
+				overflow: auto;
+				-moz-flex-wrap: nowrap;
+				-webkit-flex-wrap: nowrap;
+				-ms-flex-wrap: nowrap;
+				flex-wrap: nowrap;
+				-moz-justify-content: left;
+				-webkit-justify-content: left;
+				-ms-justify-content: left;
+			}
 		}
 
 		@media screen and (max-width: 736px) {
-
 			.tooltip {
 				width: 90%;
 				font-size: 0.8em;
@@ -8497,10 +8508,17 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 480px) {
-
+			
+			.items.style4 {
+				width: 100vw;
+				margin: -20px;
+			}
+			
 			.items.style4 img {
-				padding-left: 5%;
-				padding-right: 5%;
+				width: 100%;
+				height: 100%;	
+				padding-left: 0%;
+				padding-right: 0%;
 			}
 
 			.items.style4 > * {
@@ -8940,9 +8958,9 @@ input, select, textarea {
 			}
 			
 			
-/* Menu */ 
+/* modal */ 
 
-	#menu {
+	#modal {
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
@@ -8977,7 +8995,7 @@ input, select, textarea {
 		width: 100%;
 	}
 
-		#menu .inner {
+		#modal .inner {
 			padding: 2.5em 1.5em 0.5em 1.5em ;
 			-moz-transform: translateY(0.5em);
 			-webkit-transform: translateY(0.5em);
@@ -9003,25 +9021,25 @@ input, select, textarea {
 			color: inherit;
 		}
 		
-		#menu p {
+		#modal p {
 			text-align: justify;
 			font-size: 0.9em;
 			line-height: 1.2em;
 		}
 		
-		#menu img {
+		#modal img {
 			border-radius: 50%;
 			object-fit: cover;
 			float: left;
 		}
 
-		#menu h2 {
+		#modal h2 {
 			text-align: left;
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 			padding-bottom: 1em;
 		}
 
-		#menu .close {
+		#modal .close {
 			position: absolute;
 			top: 15%;
 			left: 76%;
@@ -9032,39 +9050,39 @@ input, select, textarea {
 			background-color: transparent;
 		}
 		
-		#menu .close:hover {
+		#modal .close:hover {
 			cursor: pointer;
 		}
 
 		@media screen and (max-width: 736px) {
 
-			#menu .inner {
+			#modal .inner {
 				width: 85%;
 				max-height: 75%;
 				overflow-y: auto;
 				overflow-x: hidden;
 			}
 
-				#menu .close {
+				#modal .close {
 					left: 80%;
 				}
 
 		}
 
-	body.is-menu-visible #page-wrapper {
+	body.is-modal-visible #page-wrapper {
 		-moz-filter: blur(1.5px);
 		-webkit-filter: blur(1.5px);
 		-ms-filter: blur(1.5px);
 		filter: blur(1.5px);
 	}
 
-	body.is-menu-visible #menu {
+	body.is-modal-visible #modal {
 		pointer-events: auto;
 		opacity: 1;
 		visibility: visible;
 	}
 
-		body.is-menu-visible #menu .inner {
+		body.is-modal-visible #modal .inner {
 			-moz-transform: translateY(0);
 			-webkit-transform: translateY(0);
 			-ms-transform: translateY(0);
