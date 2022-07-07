@@ -41,6 +41,16 @@
 				}
 			}, 100);
 		});
+		
+	// Setup modals 
+		$window.on('load', function() {
+			setTimeout(function() {
+				$body.removeClass('is-preload');
+				if($(".withClose").length != 0) {
+					$('.withClose').prepend('<a class="close"><span class="icon style1 solid fa-times"></span></a>');
+				}
+			}, 100);
+		});
 
 
 	// Browser fixes.
