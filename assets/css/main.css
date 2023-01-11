@@ -9240,22 +9240,22 @@ input, select, textarea {
 		background-size: cover;
 	}
 
-
 	.testimonial_item {
 	  top: 0;
 	  left: 0;
 	  right: 0;
 	  bottom: 0;
-	  width: 70%;
+	  width: 90%;
 	  margin: auto;
-	  padding: 20px;
+	  padding: 10px;
 	  position: relative;
 	  text-align: center;
 	  color: white;
 	}
 	
 	.testimonial_item span {
-		color: orange;
+		color: white;
+		font-weight: 550;
 	}
 	
 	.testimonial_item img {
@@ -9265,9 +9265,11 @@ input, select, textarea {
 
 	.testimonial_item p {
 		color: #ffffff;
-			  font-size: 1.1em;
+		font-size: 1.0em;
 		line-height: 1.4;
+		font-weight: 300;
 		margin: 40px 0 20px 0;
+
 	}
 	.testimonial_item h4 {
 	  color: #ffffff;
@@ -9283,7 +9285,8 @@ input, select, textarea {
 		.testimonial_item {
 		  width: 100%;
 		  margin: auto;
-		  padding: 10%;
+		  padding: 4%;
+		  
 		}
 		
 		.testimonial_item img {
@@ -9296,7 +9299,7 @@ input, select, textarea {
 		}
 		
 		.testimonial article:last-child {
-		  margin-right: 10%;
+		  margin-right: 12%;
 		}		
 	}
 
